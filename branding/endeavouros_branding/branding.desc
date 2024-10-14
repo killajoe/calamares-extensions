@@ -1,0 +1,47 @@
+componentName: endeavouros
+
+welcomeStyleCalamares:   false
+
+# Should the welcome image (productWelcome, below) be scaled
+# up beyond its natural size?
+welcomeExpandingLogo:   true
+
+windowExpanding:    normal
+windowSize: 920px,630px
+windowPlacement: center
+
+sidebar: qml,top
+navigation: qml,bottom
+
+strings:
+    productName:         EndeavourOS
+    shortProductName:    EndeavourOS
+    version:             ${release_name} ${version}
+    shortVersion:        ${version}
+    versionedName:       EndeavourOS ${release_name}
+    shortVersionedName:  ${release_name}
+    bootloaderEntryName: EndeavourOS
+
+images:
+    productLogo:         "endeavouros-icon.png"
+    productIcon:         "endeavouros-icon.png"
+    productWelcome:      "worldmap.png"
+    productBanner:       "release-name-logo.png"
+    #productWallpaper:    "wallpaper.png"
+
+slideshowAPI: 2
+
+style:
+   SidebarBackground:        "#2a2e32"
+   SidebarText:              "#ffffff"
+   SidebarTextCurrent:       "#08052b"
+   SidebarBackgroundCurrent: "#7f7fff"
+
+slideshow:               "show.qml"
+
+# log feature
+
+uploadServer :
+    type :    "fiche"
+    url :     "http://termbin.com:9999"
+    sizeLimit : -1
