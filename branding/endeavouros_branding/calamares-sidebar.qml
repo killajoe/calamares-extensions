@@ -18,12 +18,12 @@ import QtQuick.Controls 2.15
 Rectangle {
     id: sideBar;
     color: Branding.styleString( Branding.SidebarBackground );
-    height: 48;
+    height: 45;
     width: parent.width
 
     RowLayout {
         anchors.fill: parent;
-        spacing: 2;
+        spacing: -10;
 
 
         Item {
@@ -33,10 +33,10 @@ Rectangle {
         Repeater {
             model: ViewManager
             Rectangle {
-                Layout.leftMargin: 4;
+                Layout.leftMargin: 2;
                 Layout.fillWidth: true;
                 Layout.alignment: Qt.AlignTop;
-                height: 48;
+                height: 45;
                 radius: 0;
                 color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarBackgroundCurrent : Branding.SidebarBackground )
 
@@ -46,7 +46,7 @@ Rectangle {
                     x: parent.x + 12;
                     color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarTextCurrent : Branding.SidebarText );
                     text: qsTr(display);
-                    font.pointSize : index == ViewManager.currentStepIndex ? 11 : 10;
+                    font.pointSize : index == ViewManager.currentStepIndex ? 10 : 9;
                 }
 
                 Rectangle {
@@ -56,6 +56,17 @@ Rectangle {
                     border.color: Branding.styleString(ViewManager.currentStepIndex === index ?
                     Branding.SidebarTextCurrent : (ViewManager.currentStepIndex >= index ? Branding.SidebarTextCurrent : Branding.SidebarBackgroundCurrent))
                     border.width: 2
+
+                    Image {
+                        source: "pan-up-symbolic.svg"
+                        id: image
+                        anchors.verticalCenter: parent.verticalCenter;
+                        anchors.verticalCenterOffset : -6
+                        x: parent.x + 45;
+                        fillMode: Image.PreserveAspectFit
+                        height: 40
+                        visible: index == ViewManager.currentStepIndex ? true : false
+                    }
                 }
             }
         }
