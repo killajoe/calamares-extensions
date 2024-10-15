@@ -25,17 +25,6 @@ Rectangle {
         anchors.fill: parent;
         spacing: 2;
 
-        Image {
-            Layout.leftMargin: 12;
-            Layout.rightMargin: 12;
-            Layout.alignment: Qt.AlignCenter;
-            id: logo;
-            width: 30;
-            height: width;  // square
-            source: "file:/" + Branding.imagePath(Branding.ProductLogo);
-            sourceSize.width: width;
-            sourceSize.height: height;
-        }
 
         Item {
             Layout.fillHeight: true;
@@ -44,12 +33,12 @@ Rectangle {
         Repeater {
             model: ViewManager
             Rectangle {
-                Layout.leftMargin: 0;
+                Layout.leftMargin: 4;
                 Layout.fillWidth: true;
                 Layout.alignment: Qt.AlignTop;
-                height: 42;
+                height: 48;
                 radius: 0;
-                color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarBackgroundCurrent : Branding.SidebarBackground );
+                color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarBackgroundCurrent : Branding.SidebarBackground )
 
                 Text {
                     anchors.verticalCenter: parent.verticalCenter;
@@ -57,26 +46,16 @@ Rectangle {
                     x: parent.x + 12;
                     color: Branding.styleString( index == ViewManager.currentStepIndex ? Branding.SidebarTextCurrent : Branding.SidebarText );
                     text: qsTr(display);
-                    font.pointSize : index == ViewManager.currentStepIndex ? 10 : 9
+                    font.pointSize : index == ViewManager.currentStepIndex ? 11 : 10;
                 }
 
                 Rectangle {
                     height: 2
                     width: 800
                     anchors.bottom: parent.bottom;
-                    border.color: Branding.styleString(ViewManager.currentStepIndex === index ? Branding.SidebarTextCurrent : (ViewManager.currentStepIndex >= index ? Branding.SidebarTextCurrent : Branding.SidebarBackgroundCurrent))
-                    border.width: 3
-
-                    Image {
-                        source: "pan-up-symbolic.svg"
-                        id: image
-                        anchors.verticalCenter: parent.verticalCenter;
-                        anchors.verticalCenterOffset : -3
-                        x: parent.x + 35;
-                        fillMode: Image.PreserveAspectFit
-                        height: 32
-                        visible: index == ViewManager.currentStepIndex ? true : false
-                    }
+                    border.color: Branding.styleString(ViewManager.currentStepIndex === index ?
+                    Branding.SidebarTextCurrent : (ViewManager.currentStepIndex >= index ? Branding.SidebarTextCurrent : Branding.SidebarBackgroundCurrent))
+                    border.width: 2
                 }
             }
         }

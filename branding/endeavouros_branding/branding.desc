@@ -7,7 +7,7 @@ welcomeStyleCalamares:   false
 welcomeExpandingLogo:   true
 
 windowExpanding:    normal
-windowSize: 920px,630px
+windowSize: 1250px,630px
 windowPlacement: center
 
 sidebar: qml,top
@@ -34,8 +34,8 @@ slideshowAPI: 2
 style:
    SidebarBackground:        "#2a2e32"
    SidebarText:              "#ffffff"
-   SidebarTextCurrent:       "#08052b"
-   SidebarBackgroundCurrent: "#7f7fff"
+   SidebarTextCurrent:       "#7f7fff"
+   SidebarBackgroundCurrent: "#2a2e32"
 
 slideshow:               "show.qml"
 
